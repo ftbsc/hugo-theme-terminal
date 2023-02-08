@@ -301,7 +301,6 @@ Sounds OK? Cool, let's rock! 🤘
 
 I'd be happy to know more about you and what you are doing. If you want to share it, please make a contribution and [add your site to the list](https://github.com/panr/hugo-theme-terminal/blob/master/USERS.md)! 🤗
 
-
 ## License
 
 Copyright © 2019-2022 Radosław Kozieł ([@panr](https://twitter.com/panr))
