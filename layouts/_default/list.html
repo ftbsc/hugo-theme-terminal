@@ -8,13 +8,13 @@
     {{ range .Paginator.Pages }}
       <article class="post on-list">
 {{ $defaultStyles := resources.Get "css/style.scss" }}
-<!-- Local Theme Variables -->
+<!-- reeeeeeee why is it broken -->
 {{ if and (isset .Params "color") (not (eq .Params.color "")) }}
   {{ $localColorCss := resources.Get (printf "css/color/%s.scss" .Params.color) }}
-  {{ $stepA := slice $localColorCss $defaultStyles | resources.Concat (printf "css/%s-local.scss" .Params.color) }}
-  {{ $stepB := replace $stepA.Content "accent" "localColor" }}
-  {{ $localCss := resources.FromString $stepB (printf "css/%s-local.scss" .Params.color) }}
+  {{ $stepB := replace $localColorCss.Content "accent" "localColor" }}
+  {{ $localCss := resources.FromString $stepB (printf "css/color/%s-local.scss" .Params.color) }}
   {{ $localColorStyles := $localCss | resources.ToCSS }}
+  <link rel="stylesheet" href="{{ $localColorStyles.Permalink }}">  
 {{ end }}
         <h1 class="post-title">
           <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
