@@ -7,6 +7,14 @@ $border-color: rgba(255, 255, 255, .1);
 $phone: "max-width: 684px";
 $tablet: "max-width: 900px";
 
+@function returnRightColor() {
+	@if meta.variable-exists("localColor") {
+		@return $localColor;
+	} @else {
+		@return $accent;
+	}
+}
+
 /* variables for js, must be the same as these in @custom-media queries */
 :root {
   --phoneWidth: (max-width: 684px);

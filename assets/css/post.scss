@@ -38,7 +38,7 @@
   &-title {
     $border: 3px dotted $accent;
     position: relative;
-    color: $accent;
+    color: returnRightColor();
     margin: 0 0 15px;
     padding-bottom: 15px;
     border-bottom: $border;
