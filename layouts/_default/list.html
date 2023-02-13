@@ -11,8 +11,8 @@
 <!-- Local Theme Variables -->
 {{ if and (isset .Params "color") (not (eq .Params.color "")) }}
   {{ $localColorCss := resources.Get (printf "css/color/%s.scss" .Params.color) }}
-  {{ $localCss := slice $localColorCss $defaultStyles | resources.Concat (printf "css/%s-local.scss" .Params.color) }}
-  {{ $localColorStyles := replace $localCss "accent" "localColor" | resources.ToCSS }}
+  {{ $localCss := slice $localColorCss $defaultStyles | replace $localCss "accent" "localColor" | resources.Concat (printf "css/%s-local.scss" .Params.color) }}
+  {{ $localColorStyles := $localCss | resources.ToCSS }}
 {{ end }}
         <h1 class="post-title">
           <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
