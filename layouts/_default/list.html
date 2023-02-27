@@ -8,7 +8,11 @@
     {{ range .Paginator.Pages }}
       <article class="post on-list">
         <h1 class="post-title">
-          <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+            {{ if .Params.externalLink }} <!-- If external link exists in post matter -->
+                <a href="{{ .Params.externalLink }}">{{ .Title | markdownify }}</a>
+            {{else}} <!-- Else show internal post page -->
+                <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+            {{end}}
         </h1>
         <div class="post-meta">
           {{ if .Date }}
@@ -44,9 +48,10 @@
         </div>
 
         {{ if not .Params.showFullContent }}
+		<!-- i dont like this
           <div>
             <a class="read-more button" href="{{.RelPermalink}}">{{ $.Site.Params.ReadMore }} →</a>
-          </div>
+          </div> -->
         {{ end }}
       </article>
     {{ end }}
