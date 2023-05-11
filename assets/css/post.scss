@@ -26,6 +26,10 @@
   margin: 0 auto;
   padding: 20px 0;
 
+  &:not(:first-of-type) {
+    margin-top: 20px;	
+  }
+
   &:not(:last-of-type) {
     border-bottom: 1px solid $border-color;
   }
