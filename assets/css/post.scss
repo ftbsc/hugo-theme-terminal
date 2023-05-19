@@ -26,9 +26,9 @@
   margin: 0 auto;
   padding: 20px 0;
 
-  ///&:first-of-type {
-  ///  margin-top: 20px;
-  ///}
+  &:first-of-type {
+    margin-top: 20px;
+  }
 
   &:not(:first-of-type) {
     margin-top: 40px;
